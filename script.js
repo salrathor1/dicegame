@@ -24,12 +24,12 @@ button.addEventListener("click", ()=> {
     moves++;
     var randomNum = Math.ceil(Math.random() * 6);
     diceImage.src = `img/dice${randomNum}.png`
-    if (randomNum == 1) {
-        youLose();
-    } else if (score > 19) {
+    currentScore.innerHTML = score = score + randomNum;
+    if (score >= 20) {
         youWin();
+    } else if (randomNum == 1) {
+        youLose();
     } else {
-        currentScore.innerHTML = score = score + randomNum;
     }
 })
 
